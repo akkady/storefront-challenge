@@ -1,0 +1,77 @@
+@use "../../styles/colors";
+
+header {
+  & {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  }
+  section a {
+    & {
+      display: flex;
+      align-items: center;
+    }
+    h1 {
+      margin-left: 10px;
+      color: colors.$primary-red;
+    }
+  }
+  nav {
+    ul {
+      & {
+        display: flex;
+        align-items: center;
+      }
+      li {
+        :first-of-type {
+          margin-right: 10px;
+        }
+        input[type="text"] {
+          width: 250px;
+          border-radius: 25px;
+          border: none;
+          color: white;
+          background-color: colors.$primary-gray;
+          padding: 8px;
+          outline: none;
+        }
+        input[type="text"]::placeholder {
+          color: white;
+        }
+        .cart-button {
+          color: #333;
+          cursor: pointer;
+          position: relative;
+        }
+        .cart-label {
+          font-weight: bold;
+          visibility: hidden;
+          position: absolute;
+          color: colors.$primary-gray;
+          top: 100%;
+          right: -6px;
+        }
+        .cart-button:hover .cart-label {
+          visibility: visible;
+        }
+
+        .cart-count {
+          position: absolute;
+          text-align: center;
+          width: 15px;
+          height: 15px;
+          font-size: 0.9rem;
+          border-radius: 50%;
+          background-color: #ff5722;
+          color: #fff;
+          bottom: 15px;
+          left: 15px;
+        }
+      }
+    }
+  }
+}
