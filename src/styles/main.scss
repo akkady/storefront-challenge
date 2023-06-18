@@ -1,0 +1,13 @@
+@use "./colors";
+
+:root {
+  color: colors.$primary-black;
+}
+a {
+  text-decoration: none;
+  color: colors.$primary-black;
+}
+ul,
+ol {
+  list-style: none;
+}
