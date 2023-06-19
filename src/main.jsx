@@ -5,7 +5,7 @@ import "./styles/main.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./app/store.js";
-import { fetchProducts } from "./features/product/productSlice.js";
+import { fetchProducts } from "./features/productSlice.js";
 
 store.dispatch(fetchProducts());
 

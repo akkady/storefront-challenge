@@ -1,14 +1,34 @@
+import { useSelector } from "react-redux";
 import PlpProductCard from "./PlpProductCard";
 import "./plp.scss";
+import {
+  selectAllProducts,
+  selectError,
+  selectStatus,
+} from "../../features/productSlice";
+import Spinner from "../../util/spinner/Spinner";
 
 const Plp = () => {
-  return (
-    <section className="product-section">
-      {products.map((product) => (
-        <PlpProductCard key={product.id} product={product} />
-      ))}
-    </section>
-  );
+  const products = useSelector(selectAllProducts) || [];
+  const productsStatus = useSelector(selectStatus);
+  const error = useSelector(selectError);
+
+  let content = "";
+  if (productsStatus === "succeeded") {
+    content = products.map((product) => (
+      <PlpProductCard key={product.id} product={product} />
+    ));
+  } else if (productsStatus === "loading") {
+    content = (
+      <p className="content-loading">
+        <Spinner />
+      </p>
+    );
+  } else if (productsStatus === "failed") {
+    content = <p className="content-error">{error} :/</p>;
+  }
+
+  return <section className="product-section">{content}</section>;
 };
 export default Plp;
 

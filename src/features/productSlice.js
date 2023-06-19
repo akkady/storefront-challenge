@@ -10,7 +10,7 @@ const PRODUCTS_URL = "https://fakestoreapi.com/products";
 
 export const productAdapter = createEntityAdapter({
   selectId: (product) => product["id"],
-  //   sortComparer: (a, b) => a.rating?.rate > b.rating?.rate,
+  sortComparer: (a, b) => a.rating?.rate > b.rating?.rate,
 });
 
 const initialState = productAdapter.getInitialState({
