@@ -1,11 +1,17 @@
-import Header from "./components/header/Header";
+import { Route, Routes } from "react-router-dom";
 import "./styles/app.scss";
+import Layout from "./components/Layout";
+import PlpWrapper from "./components/plp/PlpWrapper";
+import PdpWrapper from "./components/pdp/PdpWrapper";
 
 function App() {
   return (
-    <>
-      <Header />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<PlpWrapper />} />
+        <Route path="product/:id" element={<PdpWrapper />} />
+      </Route>
+    </Routes>
   );
 }
 
