@@ -1,6 +1,6 @@
 import { MdAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import PropTypes from "prop-types";
 const PlpProductCard = ({ product }) => {
   const { title, price, category, image } = product;
 
@@ -23,5 +23,15 @@ const PlpProductCard = ({ product }) => {
       </div>
     </article>
   );
+};
+
+PlpProductCard.propTypes = {
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    category: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
 };
 export default PlpProductCard;
