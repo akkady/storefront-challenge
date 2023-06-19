@@ -1,8 +1,15 @@
 @use "./colors";
+@use "./fonts";
 
 :root {
   color: colors.$primary-black;
+  font-family: fonts.$fontPoppins;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   text-decoration: none;
   color: colors.$primary-black;
