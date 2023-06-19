@@ -5,10 +5,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: #fff;
+  }
+  section {
+    margin-left: 6%;
   }
   section a {
     & {
@@ -21,6 +26,7 @@ header {
     }
   }
   nav {
+    margin-right: 6%;
     ul {
       & {
         display: flex;
@@ -46,11 +52,14 @@ header {
           color: #333;
           cursor: pointer;
           position: relative;
+          font-weight: bold;
+          font-size: 20px;
         }
         .cart-label {
-          font-weight: bold;
+          font-weight: 500;
           visibility: hidden;
           position: absolute;
+          font-size: 15px;
           color: colors.$primary-gray;
           top: 100%;
           right: -6px;
@@ -64,7 +73,7 @@ header {
           text-align: center;
           width: 15px;
           height: 15px;
-          font-size: 0.9rem;
+          font-size: 0.7rem;
           border-radius: 50%;
           background-color: #ff5722;
           color: #fff;
