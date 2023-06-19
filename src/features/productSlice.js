@@ -16,7 +16,6 @@ export const productAdapter = createEntityAdapter({
 const initialState = productAdapter.getInitialState({
   status: "idle", //'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
-  count: 0,
   ids: [],
 });
 
@@ -24,7 +23,6 @@ export const fetchProducts = createAsyncThunk(
   "products/fetchProducts",
   async () => {
     const response = await axios.get(PRODUCTS_URL);
-    console.log(response.data);
     return response.data;
   }
 );
@@ -63,7 +61,5 @@ export const selectProductByCategory = createSelector(
   (products, category) =>
     products.filter((product) => product.category === category)
 );
-export const getCount = (state) => state.product.count;
 
-export const { increaseCount, reactionAdded } = productSlice.actions;
 export default productSlice.reducer;
