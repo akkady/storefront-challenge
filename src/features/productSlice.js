@@ -56,10 +56,26 @@ export const {
 
 export const selectStatus = (state) => state.products.status;
 export const selectError = (state) => state.products.error;
-export const selectProductByCategory = createSelector(
-  [selectAllProducts, (state, category) => category],
-  (products, category) =>
-    products.filter((product) => product.category === category)
+export const selectProductByCategoryAndRates = createSelector(
+  [
+    selectAllProducts,
+    (state, category) => category,
+    (state, category, rating) => rating,
+  ],
+  (products, category, rating) => {
+    if (!category && rating == 0) {
+      return products;
+    } else if (category && rating == 0) {
+      return products.filter((product) => product.category === category);
+    } else if (!category && rating > 0) {
+      return products.filter((product) => product.rating.rate > rating);
+    } else {
+      return products.filter(
+        (product) =>
+          product.category === category && product.rating.rate > rating
+      );
+    }
+  }
 );
 
 export default productSlice.reducer;

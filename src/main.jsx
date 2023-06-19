@@ -6,8 +6,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./app/store.js";
 import { fetchProducts } from "./features/productSlice.js";
+import { fetchCategories } from "./features/categorySlice.js";
 
 store.dispatch(fetchProducts());
+store.dispatch(fetchCategories());
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

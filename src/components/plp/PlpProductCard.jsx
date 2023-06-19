@@ -27,6 +27,7 @@ const PlpProductCard = ({ product }) => {
 
 PlpProductCard.propTypes = {
   product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     category: PropTypes.string.isRequired,
