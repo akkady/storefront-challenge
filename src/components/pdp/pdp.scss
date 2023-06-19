@@ -1,0 +1,83 @@
+@use "../../styles/colors.scss";
+.pdp-container {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 16px;
+  background-color: #f2f2f2;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  .product-image {
+    text-align: center;
+    img {
+      width: 100%;
+      max-height: 600px;
+      object-fit: cover;
+    }
+  }
+  .product-details {
+    .product-category {
+      color: colors.$primary-gray;
+      text-transform: uppercase;
+    }
+    .product-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .product-price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #ff5722;
+    }
+
+    .product-description {
+      font-size: 16px;
+      color: #555;
+    }
+    .product-actions {
+      display: flex;
+      align-items: center;
+
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      input[type="number"] {
+        -moz-appearance: textfield;
+        height: 35px;
+        width: 35px;
+        margin-right: 2px;
+        margin-left: 2px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .update-qte {
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 400;
+        cursor: pointer;
+        background-color: colors.$primary-black;
+        color: white;
+      }
+      .add-to-cart {
+        margin-left: 10px;
+        width: 150px;
+        height: 40px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 5px;
+        background-color: colors.$primary-black;
+        color: white;
+      }
+    }
+  }
+}
