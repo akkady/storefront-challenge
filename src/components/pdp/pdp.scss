@@ -56,6 +56,10 @@
         font-size: 18px;
         font-weight: bold;
       }
+      button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
       .update-qte {
         height: 40px;
         width: 40px;

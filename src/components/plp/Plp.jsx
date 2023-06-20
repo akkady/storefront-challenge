@@ -2,13 +2,13 @@ import { useSelector } from "react-redux";
 import PlpProductCard from "./PlpProductCard";
 import "./plp.scss";
 import {
-  selectAllProducts,
   selectError,
   selectProductByCategoryAndRates,
   selectStatus,
 } from "../../features/productSlice";
 import Spinner from "../../util/spinner/Spinner";
 import { useEffect } from "react";
+import AddToCartAlert from "../cart/AddToCartAlert";
 
 const Plp = ({ categoryFilter, ratingFilter }) => {
   const products =
@@ -36,6 +36,11 @@ const Plp = ({ categoryFilter, ratingFilter }) => {
 
   useEffect(() => {}, [categoryFilter, ratingFilter]);
 
-  return <section className="product-section">{content}</section>;
+  return (
+    <section className="product-section">
+      <AddToCartAlert />
+      {content}
+    </section>
+  );
 };
 export default Plp;

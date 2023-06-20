@@ -1,0 +1,18 @@
+.add-to-cart-alert {
+  position: fixed;
+  z-index: 990;
+  top: 100px;
+  right: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  width: 250px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.alert-bg-failed {
+  background-color: #f2a600;
+}
+.alert-bg-success {
+  background-color: #12c99b;
+}
