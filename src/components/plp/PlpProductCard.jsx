@@ -1,8 +1,15 @@
 import { MdAddShoppingCart } from "react-icons/md";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../features/cartSlice";
 const PlpProductCard = ({ product }) => {
   const { title, price, category, image } = product;
+  const dispatch = useDispatch();
+  const addToCarthandler = () => {
+    const entry = { productId: product.id, quantity: 1, price: product.price };
+    dispatch(addToCart(entry));
+  };
 
   return (
     <article className="product-card">
@@ -16,7 +23,7 @@ const PlpProductCard = ({ product }) => {
         </h4>
         <div className="product-bottom-details">
           <p className="product-price">${price}</p>
-          <Link to="#" className="add-to-cart">
+          <Link to="#" className="add-to-cart" onClick={addToCarthandler}>
             <MdAddShoppingCart />
           </Link>
         </div>

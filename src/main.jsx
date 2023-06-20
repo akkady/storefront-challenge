@@ -7,9 +7,11 @@ import { Provider } from "react-redux";
 import store from "./app/store.js";
 import { fetchProducts } from "./features/productSlice.js";
 import { fetchCategories } from "./features/categorySlice.js";
+import { initializeCart } from "./features/cartSlice.js";
 
 store.dispatch(fetchProducts());
 store.dispatch(fetchCategories());
+store.dispatch(initializeCart());
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
