@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import "./pdp.scss";
+import RatingStars from "../../util/RatingStars";
 const Pdp = ({ product }) => {
   const [cardQty, setCardQty] = useState(0);
   const changeQte = (e) => {
@@ -18,6 +19,8 @@ const Pdp = ({ product }) => {
       </div>
       <div className="product-details">
         <p className="product-category">{product.category}</p>
+        <RatingStars rate={product.rating?.rate} /> ({product.rating?.count}{" "}
+        reviews)
         <h2 className="product-title">{product.title}</h2>
         <p className="product-price">${product.price}</p>
         <p className="product-description">{product.description}</p>
