@@ -25,7 +25,11 @@ const Pdp = ({ product }) => {
     }
   };
   const handelAddToCart = () => {
-    const entry = { productId: product.id, quantity: cartQty };
+    const entry = {
+      productId: product.id,
+      quantity: cartQty,
+      price: product.price,
+    };
     if (cartEntry) {
       dispatch(updateQuantity(entry));
     } else {
